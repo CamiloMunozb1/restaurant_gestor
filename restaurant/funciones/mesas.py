@@ -5,11 +5,9 @@ def gestor_mesa():
         try:
             consulta_cursor = mesa_gestor.cursor()
             numero_mesa = int(input("Ingresa numero de la mesa: "))
-            capacidad_mesa = str(input("Ingresa la capacidad de la msea (baja-media-alta): "))
+            capacidad_mesa = str(input("Ingresa la capacidad de la mesa (baja-media-alta): "))
             ubicacion_mesa = str(input("Ingrese la ubicacion de la mesa (interior o exterior): "))
-            consulta_cursor.execute("INSERT INTO Gestion_mesa (Numero_mesa) VALUES (?)", (numero_mesa,))
-            consulta_cursor.execute("INSERT INTO Gestion_mesa (Capacidad) VALUES (?)", (capacidad_mesa,))
-            consulta_cursor.execute("INSERT INTO Gestion_mesa (Ubicacion) VALUES (?)", (ubicacion_mesa,))
+            consulta_cursor.execute("INSERT INTO Gestion_mesa (Numero_mesa, Capacidad, Ubicacion) VALUES (?,?,?)", (numero_mesa,capacidad_mesa,ubicacion_mesa))
             mesa_gestor.commit()
             print("Gestion de la mesa añadido correctamente.")
         except ValueError:
