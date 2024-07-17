@@ -1,5 +1,6 @@
 from restaurant.funciones.mesas import gestor_mesa
 from restaurant.funciones.eliminar_mesa import eliminar_mesa
+from restaurant.funciones.clientes import gestion_clientes
 
 while True:
     print("""
@@ -17,7 +18,7 @@ while True:
         elif usuario == 2:
             eliminar_mesa()
         elif usuario == 3:
-            print("Proxima funcionalidad.")
+           gestion_clientes()
         elif usuario == 4:
             print("Proxima funcionalidad.")
         elif usuario == 5:
