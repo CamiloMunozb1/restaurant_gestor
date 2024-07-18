@@ -1,6 +1,7 @@
 from restaurant.funciones.mesas import gestor_mesa
 from restaurant.funciones.eliminar_mesa import eliminar_mesa
 from restaurant.funciones.clientes import gestion_clientes
+from restaurant.funciones.eliminar_cliente import eliminar_cliente
 
 while True:
     print("""
@@ -8,8 +9,9 @@ while True:
           1. Agregar una nueva mesa.
           2. Eliminar mesa
           3. Registro de clientes.
-          4. Gestor de reservas. 
-          5. Salir
+          4. Eliminar cliente.
+          5. Gestor de reservas. 
+          6. Salir
           """)
     try:
         usuario = int(input("Ingrese una opcion: "))
@@ -20,8 +22,11 @@ while True:
         elif usuario == 3:
            gestion_clientes()
         elif usuario == 4:
-            print("Proxima funcionalidad.")
+            eliminar_cliente()
         elif usuario == 5:
+            print("Proxima funcionalidad. ")
+        elif usuario == 6:
             print("Hasta luego, gracias por gestionar tus reservas.")
+            break
     except ValueError:
         print("Error de digitacion, vuelve a intentar.")
