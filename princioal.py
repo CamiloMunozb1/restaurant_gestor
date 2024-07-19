@@ -2,6 +2,7 @@ from restaurant.funciones.mesas import gestor_mesa
 from restaurant.funciones.eliminar_mesa import eliminar_mesa
 from restaurant.funciones.clientes import gestion_clientes
 from restaurant.funciones.eliminar_cliente import eliminar_cliente
+from restaurant.funciones.reservas import gestor_reservas
 
 while True:
     print("""
@@ -24,7 +25,7 @@ while True:
         elif usuario == 4:
             eliminar_cliente()
         elif usuario == 5:
-            print("Proxima funcionalidad. ")
+            gestor_reservas()
         elif usuario == 6:
             print("Hasta luego, gracias por gestionar tus reservas.")
             break
