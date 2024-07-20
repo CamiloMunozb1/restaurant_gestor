@@ -18,7 +18,7 @@ def gestor_reservas():
             else:
                 print("Cliente no encontrado.")
                 return
-            
+
             # Obtener Mesa_ID
             consulta_cursor.execute("SELECT Mesa_ID FROM Gestion_mesa WHERE Numero_mesa = ?", (numero_mesa,))
             mesa = consulta_cursor.fetchone()
@@ -27,9 +27,9 @@ def gestor_reservas():
             else:
                 print("Mesa no encontrada.")
                 return
-            
+
             # Insertar en Gestion_reservas
-            consulta_cursor.execute("INSERT INTO Gestion_reservas (Hora_reserva, Fecha_reserva, Cliente_ID, Mesa_ID) VALUES (?, ?, ?, ?)",(hora_reserva, fecha_reserva, cliente_id, mesa_id))
+            consulta_cursor.execute("INSERT INTO Gestion_reservas (Hora_reserva, Fecha_reserva,  Cliente_ID,  Mesa_ID) VALUES (?, ?, ?, ?)",(hora_reserva, fecha_reserva, cliente_id, mesa_id))
             reservas_gestor.commit()
             print("Reserva gestionada con éxito.")
             
